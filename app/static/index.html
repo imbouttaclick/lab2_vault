@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault Admin</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .hidden { display: none; }
+        input, button { padding: 0.5rem; margin: 0.25rem 0; font-size: 1rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #ddd; }
+        .error { color: red; margin-top: 0.5rem; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+    <h1>Vault Admin Panel</h1>
+    
+    <!-- Блок логина -->
+    <div id="login-section">
+        <h2>Вход</h2>
+        <div>
+            <input type="email" id="login-email" placeholder="Email" value="griperimperator@gmail.com">
+        </div>
+        <div>
+            <input type="password" id="login-password" placeholder="Пароль">
+        </div>
+        <button onclick="handleLogin()">Войти</button>
+        <div id="login-error" class="error"></div>
+    </div>
+
+    <!-- Блок админки (скрыт по умолчанию) -->
+    <div id="admin-section" class="hidden">
+        <div class="header">
+            <h2>Клиенты OAuth</h2>
+            <button onclick="handleLogout()">Выйти</button>
+        </div>
+        
+        <div>
+            <input type="text" id="client-name" placeholder="Название клиента">
+            <button onclick="createClient()">Создать клиента</button>
+        </div>
+        <div id="admin-error" class="error"></div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Client ID</th>
+                    <th>Имя</th>
+                    <th>Создан</th>
+                </tr>
+            </thead>
+            <tbody id="clients-table-body">
+                <!-- Данные будут вставляться сюда -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/admin/app.js"></script>
+</body>
+</html>

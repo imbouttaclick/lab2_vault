@@ -1,0 +1,39 @@
+# Переменные окружения и секреты
+.env
+.env.local
+.env.*.local
+
+# Базы данных
+*.db
+*.sqlite
+*.sqlite3
+vault.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Виртуальные окружения
+.venv/
+venv/
+ENV/
+env/
+
+# Тесты и кэш
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Редакторы и IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
